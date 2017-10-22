@@ -3,7 +3,6 @@ import { FormsModule } from '@angular/forms';
 
 import { Task } from './../task/model/task';
 import { Status } from './../task/model/status';
-import { TaskList } from './../tasklist/model/task-list';
 import { TaskManagerService } from './task-manager.service';
 
 @Component({

@@ -1,39 +1,20 @@
-
-
-<!-- <div class="text-info"> -->
 <div class="task">
+  <div class="row">
+    <div class="col">
+      <div class="input-group">
 
-<!-- <div class="pull-left"> -->
+        <div *ngIf="task.status == 1; then completedBlock; else nonCompletedBlock"></div>
+        <ng-template #completedBlock><i class="fa fa-check-square-o fa-2x text-primary" aria-hidden="true" (click)="markAsIncomplete()"></i></ng-template>
+        <ng-template #nonCompletedBlock><i class="fa fa-square-o fa-2x text-primary" aria-hidden="true" (click)="markAsCompleted()"></i></ng-template>
 
-<!-- <div> -->
-<div class="row">
-  <!-- <div class="col-1">
-    <div *ngIf="task.status == 1; then completedBlock; else nonCompletedBlock"></div>
-    <ng-template #completedBlock><i class="fa fa-check-square-o fa-2x text-primary" aria-hidden="true" (click)="markAsIncomplete()"></i></ng-template>
-    <ng-template #nonCompletedBlock><i class="fa fa-square-o fa-2x text-primary" aria-hidden="true" (click)="markAsCompleted()"></i></ng-template>
-  </div> -->
+        <input type="text" class="form-control taskInput" value="{{task.title}}" placeholder="Enter Task..." [disabled]="!editable"/>
 
-  <div class="col">
-    <div class="input-group">
+        <div *ngIf="editable; then saveBlock; else editBlock"></div>
+        <ng-template #saveBlock><i class="fa fa-floppy-o fa-2x text-success" aria-hidden="true" (click)="editable=!editable"></i></ng-template>
+        <ng-template #editBlock><i class="fa fa-pencil fa-2x text-primary" aria-hidden="true" (click)="editable=!editable"></i></ng-template>
 
-      <div *ngIf="task.status == 1; then completedBlock; else nonCompletedBlock"></div>
-      <ng-template #completedBlock><i class="fa fa-check-square-o fa-2x text-primary" aria-hidden="true" (click)="markAsIncomplete()"></i></ng-template>
-      <ng-template #nonCompletedBlock><i class="fa fa-square-o fa-2x text-primary" aria-hidden="true" (click)="markAsCompleted()"></i></ng-template>
-
-      <input type="text" class="form-control taskInput" value="{{task.title}}" placeholder="Enter Task..." [disabled]="!editable"/>
-
-      <div *ngIf="editable; then saveBlock; else editBlock"></div>
-      <ng-template #saveBlock><i class="fa fa-floppy-o fa-2x text-success" aria-hidden="true" (click)="editable=!editable"></i></ng-template>
-      <ng-template #editBlock><i class="fa fa-pencil fa-2x text-primary" aria-hidden="true" (click)="editable=!editable"></i></ng-template>
-
-      <i class="fa fa-trash fa-2x text-danger" aria-hidden="true" (click)="deleteTask(task)"></i>
+        <i class="fa fa-trash fa-2x text-danger" aria-hidden="true" (click)="deleteTask(task)"></i>
+      </div>
     </div>
   </div>
-  <!-- <div class="col-1">
-      <i class="fa fa-pencil fa-2x text-primary" aria-hidden="true" (click)="editable=!editable"></i>
-  </div>
-  <div class="col-1">
-      <i class="fa fa-trash fa-2x text-danger" aria-hidden="true" (click)="deleteTask(task)"></i>
-  </div> -->
-</div>
 </div>
