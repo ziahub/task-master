@@ -1,0 +1,22 @@
+.tasks-container {
+  height: 100%;
+  background-color: #daecff;
+  font-size: 16px;
+}
+
+/*.tasks{
+  height: 100%;
+}*/
+.tasks ul {
+  list-style: none;
+  /*padding: 0em .1em;*/
+  margin-left: -2.3em;
+}
+
+.tasks task {
+  margin: .1em 0;
+}
+
+/*.tasks i{
+  margin: 0 .1em;
+}*/

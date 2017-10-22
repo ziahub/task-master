@@ -1,0 +1,17 @@
+.tasks-container {
+  height: 100vh;
+  font-size: 16px;
+  padding: 0em .5em 0em .5em;
+}
+
+.task-adder {
+  padding: .5em 0em .5em 0em;
+}
+.tasks ul {
+  list-style: none;
+  margin-left: -2.3em;
+}
+
+.tasks task {
+  margin: .1em 0em;
+}

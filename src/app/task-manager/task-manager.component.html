@@ -1,0 +1,65 @@
+<div class="tasks-container">
+  <div class="row task-adder">
+    <div class="col">
+      <div class="input-group">
+        <input type="text" name="newTaskTitle" class="form-control" #newTaskTitle placeholder="Enter Task..."/>
+        <span class="input-group-btn">
+          <button class="btn btn-outline-primary" type="button" (click)="addTask(newTaskTitle.value)">Add Task</button>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="nav nav-pills row">
+      <div class="col text-center">
+          <a class="nav-link" [ngClass]="{'active' : activeLisView == 0  }" href="#" (click)="show('active')">Active Task</a>
+      </div>
+      <div class="col text-center">
+        <a class="nav-link" href="#" [ngClass]="{'active' : activeLisView != 1 &&  activeLisView != 0 }" (click)="show('all')">All Task</a>
+      </div>
+      <div class="col text-center">
+        <a class="nav-link" href="#" [ngClass]="{'active' : activeLisView == 1  }" (click)="show('completed')">Completed Task</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel-body">
+    <div class="tasks">
+      <ul>
+        <li *ngFor="let task of tasks">
+          <task [task]="task" (click)="processTaskEvent(task)"></task>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<!-- <div class="tasks-container">
+
+  <div class="row">
+    <div class="col">
+      <div class="input-group">
+        <input type="text" name="newTaskTitle" class="form-control" #newTaskTitle placeholder="Enter Task..."/>
+        <span class="input-group-btn">
+          <button class="btn btn-primary" type="button" (click)="addTask(newTaskTitle.value)">Add Task</button>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="tasks">
+    <ul>
+      <li *ngFor="let task of tasks">
+        <task [task]="task" (click)="processTaskEvent(task)"></task>
+      </li>
+    </ul>
+  </div>
+
+
+</div> -->

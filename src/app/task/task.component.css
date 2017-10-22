@@ -1,0 +1,31 @@
+/*.task {
+  border-style: solid;
+  border-width: .0em 0em .1em .0em;
+  border-bottom-color: #dddddd;
+}*/
+
+.task i{
+  margin: 0em .15em 0em 0em;
+}
+
+.taskInput {
+  /*border-bottom-color: #1E27CC;
+  border-bottom-width: .2em;*/
+  margin: 2px;
+  padding: 0em 0.3em;
+  font-size: 1.1em;
+  /*background: #daecff;*/
+
+  border-style: solid;
+  border-width: .0em 0em .1em .0em;
+  border-bottom-color: #1E27CC;
+}
+
+input[type="text"]:disabled {
+    /*background: #daecff;*/
+    background: #ffffff;
+
+    border-style: solid;
+    border-width: .0em 0em .1em .0em;
+    border-bottom-color: #dddddd;
+}
